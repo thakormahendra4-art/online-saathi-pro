@@ -1,36 +1,5 @@
 import type { JSX } from "react";
-import { Building2, MapPin, Truck } from "lucide-react";
-
-interface LevelInfo {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  highlight?: string;
-}
-
-const levels: LevelInfo[] = [
-  {
-    icon: MapPin,
-    title: "Payments — State Level",
-    description:
-      "Our services cover multiple states across India, each with unique needs and demographics. In each state, we work closely with local organizations, community leaders, and government bodies to deliver our services effectively. This localized approach allows us to adapt our offerings to each state's specific social and economic environment, ensuring maximum impact.",
-    highlight: "Localized Impact",
-  },
-  {
-    icon: Building2,
-    title: "District Level Operations",
-    description:
-      "Within each state, we have set up operational networks at the district level. By dividing operations district-wise, we're able to provide more targeted services and reach people in rural and underserved areas. Our district teams are deeply involved with the local communities, making sure that every initiative is relevant and accessible to the residents of each district.",
-    highlight: "Targeted Reach",
-  },
-  {
-    icon: Truck,
-    title: "Delivery — Government Schemes",
-    description:
-      "Our Saathis are community representatives trained to deliver Online Saathi's services at the grassroots level. These individuals act as connectors, spreading awareness about available services, helping people navigate social welfare schemes, job opportunities, and more.",
-    highlight: "Grassroots Delivery",
-  },
-];
+import { networkLevels } from "../../../data/saathiNetworkPageData";
 
 const SaathiNetworkDistrict = (): JSX.Element => {
   return (
@@ -48,7 +17,7 @@ const SaathiNetworkDistrict = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {levels.map((level) => {
+          {networkLevels.map((level) => {
             const Icon = level.icon;
 
             return (

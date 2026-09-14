@@ -1,33 +1,5 @@
 import type { JSX } from "react";
-import { HeartHandshake, MapPin, Users } from "lucide-react";
-
-interface CultureItem {
-  icon: React.ElementType;
-  title: string;
-  text: string;
-  gradient: string;
-}
-
-const cultureItems: CultureItem[] = [
-  {
-    icon: Users,
-    title: "Collaborative Pods",
-    text: "Small, autonomous teams shipping directly with merchants across our field hubs.",
-    gradient: "from-[#0075a8] to-[#00507a]",
-  },
-  {
-    icon: MapPin,
-    title: "Field-First Office",
-    text: "Jaipur & Bengaluru hubs with district offices in 22 states, not just city desks.",
-    gradient: "from-[#0f766e] to-[#134e4a]",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Customer Obsession",
-    text: "Every sprint ends with a merchant call — insights beat assumptions, always.",
-    gradient: "from-[#7c3aed] to-[#4c1d95]",
-  },
-];
+import { cultureItems } from "../../data/teamPageData";
 
 const CultureWorkspace = (): JSX.Element => {
   return (

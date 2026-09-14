@@ -1,72 +1,5 @@
 import type { JSX } from "react";
-import {
-  ClipboardCheck,
-  CreditCard,
-  FileCheck,
-  Fingerprint,
-  Send,
-  UserCheck,
-  Verified,
-} from "lucide-react";
-
-interface Step {
-  number: string;
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const steps: Step[] = [
-  {
-    number: "01",
-    icon: UserCheck,
-    title: "Register as Agent",
-    description:
-      "Sign up as an authorized PAN card agent through Online Saathi. Complete your KYC and get access to the NSDL/UTIITSL portal.",
-  },
-  {
-    number: "02",
-    icon: Fingerprint,
-    title: "Collect Customer Details",
-    description:
-      "Gather Aadhaar, photograph, and signature from the applicant. Our guided form ensures nothing is missed.",
-  },
-  {
-    number: "03",
-    icon: ClipboardCheck,
-    title: "Fill Application Online",
-    description:
-      "Use the agent portal to complete Form 49A or 49AA. Auto-validation checks reduce errors and rejections.",
-  },
-  {
-    number: "04",
-    icon: CreditCard,
-    title: "Process Payment",
-    description:
-      "Collect the application fee from the customer and process payment through the integrated gateway.",
-  },
-  {
-    number: "05",
-    icon: Send,
-    title: "Submit Application",
-    description:
-      "Review and submit the application directly to NSDL or UTIITSL. Receive an acknowledgment number instantly.",
-  },
-  {
-    number: "06",
-    icon: FileCheck,
-    title: "Track Status",
-    description:
-      "Monitor application status in real-time through the agent dashboard. Keep your customers informed at every step.",
-  },
-  {
-    number: "07",
-    icon: Verified,
-    title: "Deliver PAN Card",
-    description:
-      "Once processed, the PAN card is dispatched to the customer's address. ePAN is delivered via email within days.",
-  },
-];
+import { panSteps } from "../../../data/panCardCenterPageData";
 
 const PanApplicationProcess = (): JSX.Element => {
   return (
@@ -90,7 +23,7 @@ const PanApplicationProcess = (): JSX.Element => {
           <div className="absolute left-6 top-0 hidden h-full w-px bg-[#deeffa] lg:block" />
 
           <div className="space-y-6">
-            {steps.map((step) => {
+            {panSteps.map((step) => {
               const Icon = step.icon;
 
               return (

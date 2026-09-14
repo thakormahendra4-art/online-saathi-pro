@@ -1,19 +1,6 @@
-import { ArrowRight, HeartHandshake, Landmark, Smartphone, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-
-const stats = [
-  { value: "20,000+", label: "Migrants & workers supported" },
-  { value: "7+", label: "Everyday services in one place" },
-  { value: "24/7", label: "Assistance via local Saathis" },
-  { value: "0", label: "Hidden fees" },
-];
-
-const heroServices = [
-  { icon: Smartphone, label: "Bill Payments" },
-  { icon: Landmark, label: "AEPS Cashout" },
-  { icon: HeartHandshake, label: "Welfare Schemes" },
-  { icon: Users, label: "Jobs Connect" },
-];
+import { heroServices, technologyStats } from "../../data/technologyPageData";
 
 const TechnologyHero = () => {
   return (
@@ -66,7 +53,7 @@ const TechnologyHero = () => {
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-4 border-t border-slate-200 pt-6 sm:grid-cols-4">
-              {stats.map((stat) => (
+              {technologyStats.map((stat) => (
                 <div key={stat.label}>
                   <p className="text-sm font-bold text-[#0075a8] sm:text-base">
                     {stat.value}

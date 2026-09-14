@@ -1,41 +1,5 @@
 import type { JSX } from "react";
-import {
-  Globe2,
-  ShieldCheck,
-  Users,
-  Zap,
-} from "lucide-react";
-
-interface ValueCard {
-  icon: React.ElementType;
-  title: string;
-  text: string;
-  badge?: string;
-}
-
-const values: ValueCard[] = [
-  {
-    icon: ShieldCheck,
-    title: "Relentless Trust & Security",
-    text: "We treat every transaction as a sacred trust. Bank-grade encryption, zero data compromises, and absolute compliance are non-negotiable baselines across all our systems.",
-    badge: "SOC2 Type II & ISO 27001 Certified",
-  },
-  {
-    icon: Zap,
-    title: "Speed as a Feature",
-    text: "In finance, waiting is a tax. We engineer sub-second payout responses and instant reconciliation workflows.",
-  },
-  {
-    icon: Globe2,
-    title: "Inclusivity by Design",
-    text: "Building products that anyone, anywhere can use effortlessly, regardless of technical literacy.",
-  },
-  {
-    icon: Users,
-    title: "Radical Transparency",
-    text: "No hidden fees, no obscure documentation, and open communication channels with our merchant ecosystem.",
-  },
-];
+import { coreValues } from "../../data/aboutPageData";
 
 const CoreValues = (): JSX.Element => {
   return (
@@ -53,7 +17,7 @@ const CoreValues = (): JSX.Element => {
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {values.map((value) => {
+          {coreValues.map((value) => {
             const Icon = value.icon;
 
             return (

@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { CheckCircle2 } from "lucide-react";
-import type { TechnologyFeatureType } from "./technologyFeatures";
+import type { TechnologyFeatureType } from "../../data/technologyPageData";
 
 interface TechnologyFeatureProps {
   feature: TechnologyFeatureType;

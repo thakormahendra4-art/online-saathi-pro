@@ -1,32 +1,5 @@
 import type { JSX } from "react";
-import { Fingerprint, ShieldCheck, Waypoints } from "lucide-react";
-
-interface Feature {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: Waypoints,
-    title: "Easy to Use",
-    description:
-      "Simple biometric-based interface designed for agents with minimal technical training. Just place a finger, enter the amount, and the cash is dispensed — no complex steps.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Safe and Quick",
-    description:
-      "Every transaction is secured with encrypted Aadhaar authentication. Funds are transferred instantly, reducing risk and building customer trust.",
-  },
-  {
-    icon: Fingerprint,
-    title: "Portable",
-    description:
-      "Compact handheld device that fits in your pocket. Serve customers anywhere — from your shop counter to village doorsteps — without being tied to a fixed location.",
-  },
-];
+import { microAtmFeatures } from "../../../data/microAtmPageData";
 
 const MicroAtmFeatures = (): JSX.Element => {
   return (
@@ -47,7 +20,7 @@ const MicroAtmFeatures = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feat) => {
+          {microAtmFeatures.map((feat) => {
             const Icon = feat.icon;
 
             return (

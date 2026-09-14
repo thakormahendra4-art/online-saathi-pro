@@ -1,38 +1,5 @@
 import type { JSX } from "react";
-import { Clock, CreditCard, Shield, Zap } from "lucide-react";
-
-interface Feature {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: Zap,
-    title: "Instant Transfer",
-    description:
-      "Money reaches Nepal within minutes via IMPS/NEFT — no waiting days for cross-border settlement.",
-  },
-  {
-    icon: Shield,
-    title: "Secure & Compliant",
-    description:
-      "Fully compliant with RBI and Nepal Rastra Bank regulations. Every transaction is encrypted and tracked.",
-  },
-  {
-    icon: CreditCard,
-    title: "Competitive Rates",
-    description:
-      "Get the best INR-NPR exchange rates with transparent pricing — no hidden charges or deductions.",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Availability",
-    description:
-      "Send money anytime through our agent network. No banking hours restriction for your customers.",
-  },
-];
+import { remittanceFeatures } from "../../../data/indoNepalRemittancePageData";
 
 const IndoNepalFeatures = (): JSX.Element => {
   return (
@@ -45,7 +12,7 @@ const IndoNepalFeatures = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feat) => {
+          {remittanceFeatures.map((feat) => {
             const Icon = feat.icon;
 
             return (

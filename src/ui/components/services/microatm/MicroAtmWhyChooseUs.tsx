@@ -1,34 +1,6 @@
 import type { JSX } from "react";
-import {
-  BadgeCheck,
-  IndianRupee,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
-
-interface Reason {
-  icon: React.ElementType;
-  title: string;
-  text: string;
-}
-
-const reasons: Reason[] = [
-  {
-    icon: BadgeCheck,
-    title: "Verified",
-    text: "Every device and agent is verified through Aadhaar eKYC, ensuring authenticity and regulatory compliance.",
-  },
-  {
-    icon: IndianRupee,
-    title: "Value for Work",
-    text: "Earn competitive commissions on every transaction — no middlemen, transparent settlement directly to your bank.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trust for Partners",
-    text: "Bank-grade security and encrypted transactions protect every customer interaction, building long-term trust.",
-  },
-];
+import { Sparkles } from "lucide-react";
+import { microAtmReasons } from "../../../data/microAtmPageData";
 
 const MicroAtmWhyChooseUs = (): JSX.Element => {
   return (
@@ -60,7 +32,7 @@ const MicroAtmWhyChooseUs = (): JSX.Element => {
           </div>
 
           <div className="space-y-4">
-            {reasons.map((reason) => {
+            {microAtmReasons.map((reason) => {
               const Icon = reason.icon;
 
               return (

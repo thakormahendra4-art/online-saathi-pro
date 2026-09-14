@@ -1,101 +1,22 @@
 import type { JSX } from "react";
-import { useState, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
 
 import "swiper/css";
 
-import img1 from "../../../../assets/services-assets/travel/t1.gif";
-import img2 from "../../../../assets/services-assets/travel/t2.gif";
-import img3 from "../../../../assets/services-assets/travel/t3.gif";
-import img4 from "../../../../assets/services-assets/travel/t4.gif";
-import img5 from "../../../../assets/services-assets/travel/t5.gif";
-
-interface TravelSlide {
-  tag: string;
-  title: ReactNode;
-  description: string;
-  image: string;
-  imageAlt: string;
-}
-
-const slides: TravelSlide[] = [
-  {
-    tag: "Bus",
-    title: (
-      <>
-        Bus Ticket Booking <br />
-        Agents
-      </>
-    ),
-    description:
-      "There are times when there is no availability of train tickets. In those cases, our bus ticket solutions are the best alternative for our customers. To provide this service, we have a link with tour operators and tours. The agent can book and confirm tickets instantly using this interface and get attractive margins on each reserved ticket.",
-    image: img5,
-    imageAlt: "Bus Ticket Booking",
-  },
-  {
-    tag: "Train",
-    title: (
-      <>
-        Train/IRCTC Ticket <br />
-        Booking Agent
-      </>
-    ),
-    description:
-      "Our agents reserve a train ticket for the customers or traveller, provide a medium for becoming an IRCTC authorized train ticketing agent, and get an instant commission on the sale of any ticket. All training and explanations will be provided to the new IRCTC ticket agent that offers best-in-class customer service.",
-    image: img2,
-    imageAlt: "Train Booking",
-  },
-  {
-    tag: "Hotel",
-    title: (
-      <>
-        Hotel Booking <br />
-        Agent
-      </>
-    ),
-    description:
-      "We have a huge database of hotels across cities. We cater to all budget and star categories and offer instant booking and confirmation in a single interface. The USP of this service is that we guarantee room availability at highly discounted prices which are a great value to our customers.",
-    image: img3,
-    imageAlt: "Hotel Booking",
-  },
-  {
-    tag: "Online",
-    title: (
-      <>
-        Online Travel <br />
-        Agent
-      </>
-    ),
-    description:
-      "Online Saathi's online travel agents excel in curating unforgettable journeys. With access to a wide range of travel options and advanced technology, we handle every aspect of travel planning. From booking flights and accommodations to arranging transfers, our agents ensure seamless experiences.",
-    image: img4,
-    imageAlt: "Online Travel",
-  },
-  {
-    tag: "Flight",
-    title: (
-      <>
-        Flight/Air Ticket <br />
-        Booking Agent
-      </>
-    ),
-    description:
-      "We offer domestic and international ticketing solutions with all available combinations and airlines. This service offers the best routing options with an easy-to-reserve interface. This is a complete trip management solution with a single interface. Agents can instantly book and confirm tickets and earn attractive flight booking commission.",
-    image: img1,
-    imageAlt: "Flight Booking",
-  },
-];
+import { travelSlides } from "../../../data/travelPageData";
+import { useTravelCarousel } from "../../../../hooks/useTravelCarousel";
 
 const TravelHero = (): JSX.Element => {
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null);
-
-  const handleSlideChange = (swiper: SwiperType) => {
-    setCurrentSlide(swiper.realIndex + 1);
-  };
+  const {
+    currentSlide,
+    setSwiperRef,
+    handleSlideChange,
+    slideTo,
+    slidePrev,
+    slideNext,
+  } = useTravelCarousel();
 
   return (
     <section className="bg-[#f9f8ff] px-4 pb-10 pt-8 sm:px-6 sm:pb-14 sm:pt-12 lg:px-8 lg:pb-16 lg:pt-14">
@@ -128,7 +49,7 @@ const TravelHero = (): JSX.Element => {
             onSwiper={setSwiperRef}
             className="travel-swiper !overflow-hidden"
           >
-            {slides.map((slide, index) => (
+            {travelSlides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="grid min-h-[420px] items-stretch overflow-hidden rounded-2xl border border-[#e0e5ee] bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] sm:min-h-[480px] lg:grid-cols-2">
                   {/* Left: content */}
@@ -139,6 +60,8 @@ const TravelHero = (): JSX.Element => {
 
                     <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#10182f] sm:text-3xl lg:text-[34px]">
                       {slide.title}
+                      <br />
+                      {slide.titleBreak}
                     </h2>
 
                     <p className="mt-4 text-sm leading-6 text-[#667085] sm:text-[15px] sm:leading-7">
@@ -189,11 +112,11 @@ const TravelHero = (): JSX.Element => {
               </span>
 
               <div className="flex items-center gap-1.5">
-                {slides.map((_, i) => (
+                {travelSlides.map((_, i) => (
                   <button
                     key={i}
                     type="button"
-                    onClick={() => swiperRef?.slideToLoop(i)}
+                    onClick={() => slideTo(i)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       currentSlide === i + 1
                         ? "w-6 bg-[#0075a8]"
@@ -205,13 +128,13 @@ const TravelHero = (): JSX.Element => {
               </div>
 
               <span className="text-2xl font-bold text-[#c7d4e0]">
-                {String(slides.length).padStart(2, "0")}
+                {String(travelSlides.length).padStart(2, "0")}
               </span>
 
               <div className="ml-1 flex gap-1.5">
                 <button
                   type="button"
-                  onClick={() => swiperRef?.slidePrev()}
+                  onClick={slidePrev}
                   className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e0e5ee] bg-white text-[#667085] transition hover:border-[#0075a8] hover:text-[#0075a8]"
                   aria-label="Previous slide"
                 >
@@ -220,7 +143,7 @@ const TravelHero = (): JSX.Element => {
 
                 <button
                   type="button"
-                  onClick={() => swiperRef?.slideNext()}
+                  onClick={slideNext}
                   className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e0e5ee] bg-white text-[#667085] transition hover:border-[#0075a8] hover:text-[#0075a8]"
                   aria-label="Next slide"
                 >

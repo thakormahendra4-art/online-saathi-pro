@@ -1,32 +1,5 @@
 import type { JSX } from "react";
-import { Lightbulb, ShieldCheck, Zap } from "lucide-react";
-
-interface Feature {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: Zap,
-    title: "Instant Confirmation",
-    description:
-      "Every payment is processed in real-time with instant acknowledgment — no delays, no uncertainty for your customers.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure & Reliable",
-    description:
-      "Powered by BBPS with bank-grade encryption and guaranteed settlement — your customers' payments are always safe.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Easy to Operate",
-    description:
-      "Simple interface designed for agents with minimal training. Enter the biller, amount, and customer details — done.",
-  },
-];
+import { billPaymentFeatures } from "../../../data/billPaymentPageData";
 
 const BillPaymentFeatures = (): JSX.Element => {
   return (
@@ -47,7 +20,7 @@ const BillPaymentFeatures = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feat) => {
+          {billPaymentFeatures.map((feat) => {
             const Icon = feat.icon;
 
             return (

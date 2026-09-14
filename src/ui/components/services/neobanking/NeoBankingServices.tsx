@@ -1,36 +1,6 @@
 import type { JSX } from "react";
-import { Banknote, Globe, PiggyBank, Smartphone } from "lucide-react";
 import NeoBankingServiceCard from "./NeoBankingServiceCard";
-
-const services = [
-  {
-    icon: Smartphone,
-    title: "Mobile Banking",
-    description:
-      "Access banking services conveniently through a user-friendly mobile app.",
-    highlight: "24/7 Access",
-  },
-  {
-    icon: Globe,
-    title: "Remittances",
-    description:
-      "Send and receive money securely, with minimal fees and hassle.",
-    highlight: "Low Fees",
-  },
-  {
-    icon: PiggyBank,
-    title: "Savings Accounts",
-    description:
-      "Open savings accounts and build financial security for the future.",
-    highlight: "Zero Balance",
-  },
-  {
-    icon: Banknote,
-    title: "Micro-loans",
-    description:
-      "Access micro-loans to support entrepreneurial endeavors or emergencies.",
-  },
-];
+import { neoBankingServices } from "../../../data/neoBankingPageData";
 
 const NeoBankingServices = (): JSX.Element => {
   return (
@@ -46,7 +16,7 @@ const NeoBankingServices = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((svc) => (
+          {neoBankingServices.map((svc) => (
             <NeoBankingServiceCard
               key={svc.title}
               icon={svc.icon}

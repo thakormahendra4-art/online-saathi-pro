@@ -1,43 +1,6 @@
 import type { JSX } from "react";
-import { ArrowRight, FileSearch, FileText, FolderSearch, LifeBuoy } from "lucide-react";
-
-interface Step {
-  number: string;
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const steps: Step[] = [
-  {
-    number: "01",
-    icon: FileSearch,
-    title: "Scheme Awareness",
-    description:
-      "Your local Saathi identifies schemes you may be eligible for based on your personal and family profile — ensuring no benefit goes unnoticed.",
-  },
-  {
-    number: "02",
-    icon: FileText,
-    title: "Application Assistance",
-    description:
-      "Saathis help you fill out application forms correctly, attach the right documents, and submit through the appropriate government portal or office.",
-  },
-  {
-    number: "03",
-    icon: FolderSearch,
-    title: "Document Collection",
-    description:
-      "From Aadhaar and ration cards to income certificates — Saathis guide you in gathering and verifying every required document for a smooth application.",
-  },
-  {
-    number: "04",
-    icon: LifeBuoy,
-    title: "Follow-up Support",
-    description:
-      "After submission, Saathis track application status, follow up with authorities, and ensure benefits are delivered to you — not lost in the system.",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { schemeSteps } from "../../../data/governmentSchemesPageData";
 
 const SchemesProcess = (): JSX.Element => {
   return (
@@ -54,7 +17,7 @@ const SchemesProcess = (): JSX.Element => {
         </div>
 
         <div className="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => {
+          {schemeSteps.map((step) => {
             const Icon = step.icon;
 
             return (

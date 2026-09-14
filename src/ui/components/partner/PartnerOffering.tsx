@@ -1,45 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import PartnerOfferingCard from "./PartnerOfferingCard";
-
-interface Offering {
-  image: string;
-  title: string;
-  description: string;
-}
-
-const offerings: Offering[] = [
-  {
-    image: "https://onlinesaathi.org/assets/profit-C_FAd-3T.gif",
-    title: "Access to India’s Informal and Underserved Markets",
-    description:
-      "Reach communities that mainstream financial channels miss through our established village-level Saathi agent network.",
-  },
-  {
-    image: "https://onlinesaathi.org/assets/sol1-Cgu19HrU.gif",
-    title: "Last-Mile Delivery and Distribution",
-    description:
-      "Deliver services, kits, and consumer products to customers through our trusted last-mile network across districts.",
-  },
-  {
-    image: "https://onlinesaathi.org/assets/call-center-CEqof3z6.gif",
-    title: "Jobs Connect",
-    description:
-      "Tap into our verified workforce pipeline and connect job seekers to relevant employment opportunities.",
-  },
-  {
-    image: "https://onlinesaathi.org/assets/business-D1NtHCfu.gif",
-    title: "Digital Finance Services & Cost-Effective Delivery",
-    description:
-      "Deploy digital finance services with low acquisition costs and shared distribution infrastructure.",
-  },
-  {
-    image: "https://onlinesaathi.org/assets/delivery-np13kPgU.gif",
-    title: "Consumer Insights & Market Intelligence",
-    description:
-      "Leverage anonymised, real-time data on spending behaviour to sharpen product and go-to-market decisions.",
-  },
-];
+import { offerings } from "../../data/partnerPageData";
 
 const PartnerOfferings: React.FC = () => {
   return (

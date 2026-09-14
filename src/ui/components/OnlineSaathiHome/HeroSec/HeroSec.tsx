@@ -1,129 +1,18 @@
-import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import image1 from "../../../../assets/home-assets/homeimg3.png";
-import image2 from "../../../../assets/home-assets/Homeimg2.png";
-import image3 from "../../../../assets/home-assets/Workers Image.png";
+import { heroSlides } from "../../../data/homePageData";
+import { useHeroCarousel } from "../../../../hooks/useHeroCarousel";
 import Content from "./Content";
 
-interface Slide {
-  image: string;
-  title: string;
-  eyebrow?: string;
-  description: string;
-  stats: {
-    value: string;
-    label: string;}[];
-}
-
-const slides: Slide[] = [
-  {
-    image: image1,
-
-    title: "Bridging Gaps for India's Unorganized Workforce",
-
-    eyebrow: "Online Saathi",
-
-    description:
-      "Online Saathi has provided personalized job-matching services, helping over 12,500 individuals find work.",
-
-    stats: [
-      {
-        value: "1500 +",
-        label: "Saathis",
-      },
-      {
-        value: "25 +",
-        label: "State Partner",
-      },
-      {
-        value: "100 +",
-        label: "District Partner",
-      },
-    ],
-  },
-
-  {
-    image: image2,
-
-    title: "Fostering a Thriving Worker Community",
-
-    eyebrow: "Online Saathi",
-
-    description:
-      "The platform has fostered a thriving community of workers and supporters, creating a network where individuals can grow, share experiences, and continuously improve their career prospects.",
-
-    stats: [
-      {
-        value: "200 +",
-        label: "Job offer",
-      },
-      {
-        value: "50 +",
-        label: "Services",
-      },
-      {
-        value: "20 +",
-        label: "Company",
-      },
-    ],
-  },
-
-  {
-    image: image3,
-
-    title: "Empowering Workers Across India",
-
-    eyebrow: "Online Saathi",
-
-    description:
-      "Connecting workers with opportunities and services to help them build a better future.",
-
-    stats: [
-      {
-        value: "5000 +",
-        label: "Workers",
-      },
-      {
-        value: "75 +",
-        label: "Partners",
-      },
-      {
-        value: "150 +",
-        label: "Companies",
-      },
-    ],
-  },
-];
-
-
 const HeroSec = () => {
-      const [currentImage, setCurrentImage] = useState(0);
+  const { currentImage, nextSlide, prevSlide, setCurrentImage } =
+    useHeroCarousel(heroSlides.length);
 
-  // Next slide
-  const nextSlide = () => {
-    setCurrentImage((prev) => (prev + 1) % slides.length);
-  };
-
-  // Previous slide
-  const prevSlide = () => {
-    setCurrentImage((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  // Automatic slider
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentSlide = slides[currentImage];
+  const currentSlide = heroSlides[currentImage];
   return (
     <div className="relative h-screen w-full overflow-hidden rounded-b-2xl shadow-xl shadow-black/60">
         {/* Background Images */}
-        {slides.map((slide, index) => (
+        {heroSlides.map((slide, index) => (
           <img
             key={slide.image}
             src={slide.image}
@@ -167,7 +56,7 @@ const HeroSec = () => {
 
         {/* Dots */}
         <div className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2.5">
-          {slides.map((_, index) => (
+          {heroSlides.map((_, index) => (
             <button
               key={index}
               type="button"

@@ -2,7 +2,7 @@ import TeamHero from "../components/team/TeamHero";
 import ExecutiveLeadership from "../components/team/ExecutiveLeadership";
 import AdvisoryBoard from "../components/team/AdvisoryBoard";
 import CultureWorkspace from "../components/team/CultureWorkspace";
-import OpenPositions from "../components/team/OpenPositions";
+// import OpenPositions from "../components/team/OpenPositions";
 import Footer from "../components/Footer";
 
 const TeamPage = () => {
@@ -12,7 +12,7 @@ const TeamPage = () => {
       <ExecutiveLeadership />
       <AdvisoryBoard />
       <CultureWorkspace />
-      <OpenPositions />
+      {/* <OpenPositions /> */}
       <Footer />
     </div>
   );

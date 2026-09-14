@@ -1,51 +1,6 @@
 import type { JSX } from "react";
 import { Building2, MapPin, Phone } from "lucide-react";
-
-type Center = {
-  city: string;
-  address: string;
-  phone: string;
-  hours: string;
-};
-
-const centers: Center[] = [
-  {
-    city: "Jaipur (Corporate HQ)",
-    address: "Crystal IT Park, Malviya Nagar, Jaipur, Rajasthan 302017",
-    phone: "+91 141-XXX-XXXX",
-    hours: "Mon–Sat, 9:00 – 19:00",
-  },
-  {
-    city: "Bengaluru (Engineering)",
-    address: "Tech Park, Outer Ring Road, Bengaluru, Karnataka 560103",
-    phone: "+91 80-XXX-XXXX",
-    hours: "Mon–Sat, 9:00 – 19:00",
-  },
-  {
-    city: "New Delhi (Regulatory)",
-    address: "Bharat Square, Connaught Place, New Delhi 110001",
-    phone: "+91 11-XXX-XXXX",
-    hours: "Mon–Fri, 9:30 – 18:30",
-  },
-  {
-    city: "Mumbai (Enterprise)",
-    address: "Business Bay, Bandra Kurla Complex, Mumbai 400051",
-    phone: "+91 22-XXX-XXXX",
-    hours: "Mon–Fri, 9:30 – 18:30",
-  },
-  {
-    city: "Kolkata (East Zone)",
-    address: "Merchant Tower, Sector V, Salt Lake, Kolkata 700091",
-    phone: "+91 33-XXX-XXXX",
-    hours: "Mon–Sat, 9:00 – 19:00",
-  },
-  {
-    city: "Patna (Bihar Field Hub)",
-    address: "Market Yard, Boring Road, Patna 800013",
-    phone: "+91 612-XXX-XXXX",
-    hours: "Mon–Sun, 8:00 – 20:00",
-  },
-];
+import { centers } from "../../data/contactPageData";
 
 const RegionalCenters = (): JSX.Element => {
   return (

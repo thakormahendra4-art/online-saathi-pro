@@ -1,12 +1,7 @@
 import type { JSX } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router";
-
-const contactLinks = {
-  Support: ["Help Center", "Toll-Free Helpline", "Raise a Ticket", "System Status", "Contact Sales"],
-  Company: ["About Us", "Leadership", "Careers", "Press & Media", "Partners"],
-  Resources: ["API Documentation", "Developer Portal", "Merchant Guides", "FAQs", "Blog"],
-};
+import { contactLinks } from "../../data/contactPageData";
 
 const ContactFooter = (): JSX.Element => {
   return (

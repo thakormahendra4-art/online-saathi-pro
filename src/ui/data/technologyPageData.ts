@@ -1,22 +1,30 @@
-import type { ElementType } from "react";
-import { Banknote, Briefcase, Landmark, Route, Users } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  Banknote,
+  Briefcase,
+  HeartHandshake,
+  Landmark,
+  Route,
+  Smartphone,
+  Users,
+} from "lucide-react";
 
-import financeImage from "../../../assets/technology-assets/2.png";
-import deliveryImage from "../../../assets/technology-assets/3.png";
-import welfareImage from "../../../assets/technology-assets/4.png";
-import communityImage from "../../../assets/technology-assets/5.png";
-import jobsImage from "../../../assets/technology-assets/6.png";
+import financeImage from "../../assets/technology-assets/2.png";
+import deliveryImage from "../../assets/technology-assets/3.png";
+import welfareImage from "../../assets/technology-assets/4.png";
+import communityImage from "../../assets/technology-assets/5.png";
+import jobsImage from "../../assets/technology-assets/6.png";
 
-export interface TechnologyFeatureType {
+export type TechnologyFeatureType = {
   eyebrow: string;
   title: string;
   description: string;
   points: string[];
   accent: string;
-  icon: ElementType;
+  icon: LucideIcon;
   image: string;
   panel: { value: string; label: string }[];
-}
+};
 
 export const technologyFeatures: TechnologyFeatureType[] = [
   {
@@ -114,4 +122,28 @@ export const technologyFeatures: TechnologyFeatureType[] = [
       { value: "Saathi", label: "Human support" },
     ],
   },
+];
+
+export type Stat = {
+  value: string;
+  label: string;
+};
+
+export const technologyStats: Stat[] = [
+  { value: "20,000+", label: "Migrants & workers supported" },
+  { value: "7+", label: "Everyday services in one place" },
+  { value: "24/7", label: "Assistance via local Saathis" },
+  { value: "0", label: "Hidden fees" },
+];
+
+export type HeroService = {
+  icon: LucideIcon;
+  label: string;
+};
+
+export const heroServices: HeroService[] = [
+  { icon: Smartphone, label: "Bill Payments" },
+  { icon: Landmark, label: "AEPS Cashout" },
+  { icon: HeartHandshake, label: "Welfare Schemes" },
+  { icon: Users, label: "Jobs Connect" },
 ];

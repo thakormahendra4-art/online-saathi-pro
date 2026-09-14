@@ -1,8 +1,9 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
-import { Link, NavLink, useLocation } from "react-router";
+import { Link, NavLink } from "react-router";
 
 import logo from "../../assets/logo.png";
+import { useNavbar } from "../../hooks/useNavbar";
 
 const servicesItems = [
   { name: "Safe Jobs Connect", path: "/safe-jobs" },
@@ -20,29 +21,19 @@ const onDemandItems = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileOnDemandOpen, setMobileOnDemandOpen] = useState(false);
-  const location = useLocation();
-
-  const isServicesActive = location.pathname === "/services";
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const closeMobileMenu = () => {
-    setIsOpen(false);
-    setMobileServicesOpen(false);
-    setMobileOnDemandOpen(false);
-  };
+  const {
+    isOpen,
+    setIsOpen,
+    isScrolled,
+    servicesOpen,
+    setServicesOpen,
+    mobileServicesOpen,
+    setMobileServicesOpen,
+    mobileOnDemandOpen,
+    setMobileOnDemandOpen,
+    closeMobileMenu,
+    isServicesActive,
+  } = useNavbar();
 
   const navItems = [
     { name: "Home", path: "/" },

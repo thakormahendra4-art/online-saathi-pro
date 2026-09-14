@@ -1,24 +1,5 @@
 import type { JSX } from "react";
-import { Eye, Target } from "lucide-react";
-
-interface Pillar {
-  icon: React.ElementType;
-  label: string;
-  text: string;
-}
-
-const pillars: Pillar[] = [
-  {
-    icon: Eye,
-    label: "Our Vision",
-    text: "Online Saathi is a partner for everyone who needs support.",
-  },
-  {
-    icon: Target,
-    label: "Our Mission",
-    text: "To create products and services that help our customers achieve their goals.",
-  },
-];
+import { missionPillars } from "../../data/aboutPageData";
 
 const AboutMission = (): JSX.Element => {
   return (
@@ -36,7 +17,7 @@ const AboutMission = (): JSX.Element => {
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {pillars.map((pillar) => {
+          {missionPillars.map((pillar) => {
             const Icon = pillar.icon;
 
             return (

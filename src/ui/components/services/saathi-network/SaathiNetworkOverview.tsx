@@ -1,11 +1,5 @@
 import type { JSX } from "react";
-import { Globe, MapPin, Users } from "lucide-react";
-
-const stats = [
-  { value: "10,000+", label: "Active Saathis", icon: Users },
-  { value: "500+", label: "Districts Covered", icon: MapPin },
-  { value: "50,000+", label: "Families Served", icon: Globe },
-];
+import { networkStats } from "../../../data/saathiNetworkPageData";
 
 const SaathiNetworkOverview = (): JSX.Element => {
   return (
@@ -33,7 +27,7 @@ const SaathiNetworkOverview = (): JSX.Element => {
           </div>
 
           <div className="space-y-4">
-            {stats.map((stat) => {
+            {networkStats.map((stat) => {
               const Icon = stat.icon;
 
               return (

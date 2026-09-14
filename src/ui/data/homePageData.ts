@@ -1,3 +1,13 @@
+import image1 from "../../assets/home-assets/homeimg3.png";
+import image2 from "../../assets/home-assets/Homeimg2.png";
+import image3 from "../../assets/home-assets/Workers Image.png";
+import partnerImage1 from "../../assets/partner-assets/image 1.png";
+import partnerImage2 from "../../assets/partner-assets/image 2.png";
+import partnerImage3 from "../../assets/partner-assets/image 3.png";
+import partnerImage4 from "../../assets/partner-assets/image 4.png";
+import partnerImage5 from "../../assets/partner-assets/image 5.png";
+import partnerImage6 from "../../assets/partner-assets/image 6.png";
+
 export type Challenge = {
   title: string;
   description: string;
@@ -185,3 +195,153 @@ export const contactInfo = {
   email: "help@onlinesaathi.org",
   emailHref: "mailto:help@onlinesaathi.org",
 };
+
+export type HeroStat = {
+  value: string;
+  label: string;
+};
+
+export type HeroSlide = {
+  image: string;
+  title: string;
+  eyebrow?: string;
+  description: string;
+  stats: HeroStat[];
+};
+
+export const heroSlides: HeroSlide[] = [
+  {
+    image: image1,
+    title: "Bridging Gaps for India's Unorganized Workforce",
+    eyebrow: "Online Saathi",
+    description:
+      "Online Saathi has provided personalized job-matching services, helping over 12,500 individuals find work.",
+    stats: [
+      {
+        value: "1500 +",
+        label: "Saathis",
+      },
+      {
+        value: "25 +",
+        label: "State Partner",
+      },
+      {
+        value: "100 +",
+        label: "District Partner",
+      },
+    ],
+  },
+  {
+    image: image2,
+    title: "Fostering a Thriving Worker Community",
+    eyebrow: "Online Saathi",
+    description:
+      "The platform has fostered a thriving community of workers and supporters, creating a network where individuals can grow, share experiences, and continuously improve their career prospects.",
+    stats: [
+      {
+        value: "200 +",
+        label: "Job offer",
+      },
+      {
+        value: "50 +",
+        label: "Services",
+      },
+      {
+        value: "20 +",
+        label: "Company",
+      },
+    ],
+  },
+  {
+    image: image3,
+    title: "Empowering Workers Across India",
+    eyebrow: "Online Saathi",
+    description:
+      "Connecting workers with opportunities and services to help them build a better future.",
+    stats: [
+      {
+        value: "5000 +",
+        label: "Workers",
+      },
+      {
+        value: "75 +",
+        label: "Partners",
+      },
+      {
+        value: "150 +",
+        label: "Companies",
+      },
+    ],
+  },
+];
+
+export type Partner = {
+  name: string;
+  image: string;
+};
+
+export const partners: Partner[] = [
+  { name: "Prabhu Money Transfer", image: partnerImage1 },
+  { name: "eKO", image: partnerImage2 },
+  { name: "IME", image: partnerImage3 },
+  { name: "Partner 4", image: partnerImage4 },
+  { name: "Partner 5", image: partnerImage5 },
+  { name: "Partner 6", image: partnerImage6 },
+];
+
+export type ContactItem = {
+  label: string;
+  value: string;
+  href?: string;
+};
+
+export const contactItems: ContactItem[] = [
+  { label: "Address", value: contactInfo.address },
+  { label: "Phone", value: contactInfo.phone, href: contactInfo.phoneHref },
+  { label: "Email", value: contactInfo.email, href: contactInfo.emailHref },
+];
+
+export type TestimonialSlide = {
+  name: string;
+  role: string;
+  image: string;
+  quote: string;
+};
+
+export const testimonialSlides: TestimonialSlide[] = [
+  {
+    name: "Ganesh KC",
+    role: "Partner",
+    image: "https://onlinesaathi.org/assets/t1-amJfKUkL.jpg",
+    quote:
+      "Thanks to Online Saathi services, I received immediate support during a crisis. Their quick response and empathy made a significance difference in my life.",
+  },
+  {
+    name: "Rudra Prasad Acharya",
+    role: "Agent",
+    image: "https://onlinesaathi.org/assets/t4-tvZNDnoG.png",
+    quote:
+      "Before, sending money to Nepal required a full day's leave and extra costs. With Online Saathi, it’s now fast, cheap, and hassle-free.",
+  },
+  {
+    name: "Raju Sharma",
+    role: "User",
+    image: "https://onlinesaathi.org/assets/t2-pv693rwy.png",
+    quote:
+      "The support from Online Saathi was exceptional. They were there when I needed them most, providing guidance and care.",
+  },
+  {
+    name: "Himal Magar",
+    role: "User",
+    image: "https://onlinesaathi.org/assets/t3-C6jtOjpV.jpg",
+    quote:
+      "Online Saathi is a secure and fast platform for sending IME Remit from India to Nepal, with easy deposits to any bank in Nepal.",
+  },
+  {
+    name: "Himal Magar",
+    role: "User",
+    image: "https://onlinesaathi.org/assets/t4-tvZNDnoG.png",
+    quote:
+      "Online Saathi is a secure and fast platform for sending IME Remit from India to Nepal, with easy deposits to any bank in Nepal.",
+  },
+];

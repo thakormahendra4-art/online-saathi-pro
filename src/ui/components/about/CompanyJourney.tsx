@@ -1,50 +1,5 @@
 import type { JSX } from "react";
-import { Flag, Heart, MapPin, School, Sparkles } from "lucide-react";
-
-interface JourneyItem {
-  year: string;
-  title: string;
-  description: string;
-  icon: React.ElementType;
-}
-
-const journey: JourneyItem[] = [
-  {
-    year: "2015",
-    title: "From Struggle to Purpose",
-    description:
-      "Naresh had worked as a child labourer in factories, hotels, and tea shops — yet never gave up his education. While at Teach for India, he saw the hardships of migrant workers first-hand and founded Online Saathi, a digital mobile office that helped migrants access jobs, their rights, and legal aid in cities.",
-    icon: Flag,
-  },
-  {
-    year: "2018",
-    title: "Labour Resource & Support Centre",
-    description:
-      "With CSR funding, Naresh launched the Labour Resource and Support Centre, helping 20,000+ migrants across the country. He registered a union and helped lakhs of migrant workers access government schemes, entitlements, wages, and legal aid.",
-    icon: School,
-  },
-  {
-    year: "2019",
-    title: "Relief During the Pandemic",
-    description:
-      "When COVID-19 hit migrant communities hard, Online Saathi organised relief for over 12,500 migrant labourer families — food, rations, transport, flight tickets, livelihoods, and loans to start businesses — raising more than ₹2.25 crore over two years.",
-    icon: Heart,
-  },
-  {
-    year: "2022",
-    title: "#WalkForMigrant",
-    description:
-      "Naresh walked 5,100 kilometres through 77 districts across 10 states. He filed 100+ RTIs on migrant labour issues and petitioned over 50 district collectors and the PMO, calling for action and dedicated schemes for migrant workers.",
-    icon: MapPin,
-  },
-  {
-    year: "Today",
-    title: "Empowering Through Skills",
-    description:
-      "Online Saathi is now a thriving movement that continues to support migrants. Its vocational training programmes — carpentry, tailoring, and digital literacy — help thousands build skills, find work, and shape better futures.",
-    icon: Sparkles,
-  },
-];
+import { journeyItems } from "../../data/aboutPageData";
 
 const CompanyJourney = (): JSX.Element => {
   return (
@@ -63,7 +18,7 @@ const CompanyJourney = (): JSX.Element => {
 
         <div className="mx-auto mt-10 max-w-3xl">
           <div className="relative space-y-8 before:absolute before:bottom-2 before:left-[19px] before:top-2 before:w-px before:bg-[#dce6ef]">
-            {journey.map((item) => {
+            {journeyItems.map((item) => {
               const Icon = item.icon;
 
               return (

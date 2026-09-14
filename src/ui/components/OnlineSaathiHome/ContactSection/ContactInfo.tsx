@@ -1,28 +1,9 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { contactInfo } from "../../../data/homePageData";
+import { contactItems } from "../../../data/homePageData";
+
+const contactIcons = [MapPin, Phone, Mail];
 
 const ContactInfo = () => {
-  const items = [
-    {
-      icon: MapPin,
-      label: "Address",
-      value: contactInfo.address,
-      href: undefined as string | undefined,
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: contactInfo.phone,
-      href: contactInfo.phoneHref,
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      value: contactInfo.email,
-      href: contactInfo.emailHref,
-    },
-  ];
-
   return (
     <div className="rounded-2xl border border-[#e0e5ee] bg-white p-7 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:p-8">
       <h2 className="text-2xl font-bold tracking-tight text-[#11182d] sm:text-3xl">
@@ -35,8 +16,8 @@ const ContactInfo = () => {
       </p>
 
       <div className="mt-7 space-y-5">
-        {items.map((item) => {
-          const Icon = item.icon;
+        {contactItems.map((item, index) => {
+          const Icon = contactIcons[index % contactIcons.length];
 
           const content = (
             <span className="flex items-start gap-4 transition-colors duration-200">

@@ -1,42 +1,6 @@
 import type { JSX } from "react";
-import {
-  Activity,
-  CheckCircle2,
-  Clock,
-  Headphones,
-  Ticket,
-} from "lucide-react";
-
-const metrics = [
-  {
-    icon: Ticket,
-    label: "Open Tickets",
-    value: "142",
-  },
-  {
-    icon: Clock,
-    label: "Avg. First Response",
-    value: "1m 38s",
-  },
-  {
-    icon: CheckCircle2,
-    label: "Resolved Today",
-    value: "1,204",
-  },
-  {
-    icon: Activity,
-    label: "SLA Compliance",
-    value: "99.2%",
-  },
-];
-
-const queueRows = [
-  ["Phone Queue", "8 agents", "Average wait 38s", "green"],
-  ["Email Inbox", "5 agents", "Average wait 26m", "blue"],
-  ["WhatsApp Care", "7 agents", "Average wait 52s", "green"],
-  ["Telegram Bot", "Automated", "Instant resolution", "blue"],
-  ["Escalation Desk", "2 leads", "Priority overrides", "amber"],
-] as const;
+import { Headphones } from "lucide-react";
+import { metrics, queueRows } from "../../data/contactPageData";
 
 const toneClasses: Record<string, string> = {
   green: "bg-emerald-50 text-emerald-600",

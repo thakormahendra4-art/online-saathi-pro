@@ -1,12 +1,7 @@
 import type { JSX } from "react";
 import { ArrowRight, HeartHandshake } from "lucide-react";
 import { Link } from "react-router";
-
-const stats = [
-  { value: "500+", label: "Total Schemes" },
-  { value: "180+", label: "Central Schemes" },
-  { value: "320+", label: "State Schemes" },
-];
+import { schemeStats } from "../../../data/governmentSchemesPageData";
 
 const SchemesHero = (): JSX.Element => {
   return (
@@ -46,7 +41,7 @@ const SchemesHero = (): JSX.Element => {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-4">
-          {stats.map((stat) => (
+          {schemeStats.map((stat) => (
             <div
               key={stat.label}
               className="rounded-xl border border-[#e0e5ee] bg-white px-3 py-4 shadow-[0_3px_10px_rgba(15,23,42,0.03)]"

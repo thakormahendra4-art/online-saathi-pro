@@ -1,25 +1,6 @@
 import type { JSX } from "react";
 import { ArrowRight } from "lucide-react";
-
-interface Position {
-  title: string;
-  meta: string;
-}
-
-const positions: Position[] = [
-  {
-    title: "Senior Backend Engineer - Core Banking",
-    meta: "Engineering • Bangalore / Remote • Full-Time",
-  },
-  {
-    title: "Product Designer - Design Systems",
-    meta: "Design • Mumbai / Hybrid • Full-Time",
-  },
-  {
-    title: "Compliance & Risk Officer",
-    meta: "Legal & Risk • Delhi NCR • Full-Time",
-  },
-];
+import { positions } from "../../data/teamPageData";
 
 const OpenPositions = (): JSX.Element => {
   return (

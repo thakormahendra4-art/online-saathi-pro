@@ -1,32 +1,5 @@
-import { Briefcase, Handshake, Landmark, type LucideIcon } from "lucide-react";
 import PartnershipTypeCard from "./PartnershipTypeCard";
-
-interface PartnerType {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}
-
-const partnerTypes: PartnerType[] = [
-  {
-    title: "Strategic Partnerships",
-    icon: Handshake,
-    description:
-      "Strategic Partnerships: We join forces with like-minded groups to expand services, boost efficiency, and develop solutions tailored to workers needs.",
-  },
-  {
-    title: "Government Collaborations",
-    icon: Landmark,
-    description:
-      "Collaboration with government agencies is key to Online Saathi mission of connecting informal workers to schemes and subsidies. By aligning with national policies, the platform promotes financial inclusion, skill development, and social welfare while ensuring seamless program implementation and systemic advocacy for the informal workforce.",
-  },
-  {
-    title: "Private Sector Engagement",
-    icon: Briefcase,
-    description:
-      "Partnering with private entities helps Online Saathi leverage expertise, technology, and funding to enhance infrastructure, expand services, and scale solutions. These collaborations drive innovation, foster entrepreneurship, and empower informal workers for sustainable economic growth.",
-  },
-];
+import { partnerTypes } from "../../data/partnerPageData";
 
 const OurPartner = () => {
   return (

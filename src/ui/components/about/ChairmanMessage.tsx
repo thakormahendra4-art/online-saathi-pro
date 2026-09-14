@@ -1,21 +1,7 @@
 import type { JSX } from "react";
 import { Quote } from "lucide-react";
 import chairmanPhoto from "../../../assets/about-assets/chairman.jpeg";
-
-const stats = [
-  {
-    value: "2012",
-    label: "Completed 12th grade and began the social sector journey",
-  },
-  {
-    value: "₹5 Cr+",
-    label: "Raised and donated through the NGO in five years",
-  },
-  {
-    value: "₹4 Cr+",
-    label: "Relief material donated during the pandemic",
-  },
-];
+import { chairmanStats } from "../../data/aboutPageData";
 
 const ChairmanMessage = (): JSX.Element => {
   return (
@@ -53,7 +39,7 @@ const ChairmanMessage = (): JSX.Element => {
               </p>
 
               <div className="mt-7 space-y-4">
-                {stats.map((stat) => (
+                {chairmanStats.map((stat) => (
                   <div
                     key={stat.value}
                     className="rounded-lg border border-white/15 px-4 py-3"

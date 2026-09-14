@@ -1,34 +1,6 @@
 import type { JSX } from "react";
-import {
-  BadgeCheck,
-  HeartHandshake,
-  IndianRupee,
-  ShieldCheck,
-} from "lucide-react";
-
-interface Reason {
-  icon: React.ElementType;
-  title: string;
-  text: string;
-}
-
-const reasons: Reason[] = [
-  {
-    icon: BadgeCheck,
-    title: "Verified",
-    text: "Every employer and job is verified so workers can trust what they apply for.",
-  },
-  {
-    icon: IndianRupee,
-    title: "Value for Work",
-    text: "Fair, transparent wages with clear terms — respected and paid on time.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trust for Partners",
-    text: "Reliable workers and dependable placements build lasting relationships with employers.",
-  },
-];
+import { HeartHandshake } from "lucide-react";
+import { reasons } from "../../../data/safeJobConnectPageData";
 
 const WhyChooseUs = (): JSX.Element => {
   return (

@@ -1,40 +1,6 @@
 import type { JSX } from "react";
 import { Mail, Share2 } from "lucide-react";
-
-interface Leader {
-  name: string;
-  initials: string;
-  role: string;
-  description: string;
-  gradient: string;
-}
-
-const leaders: Leader[] = [
-  {
-    name: "Aarav Sharma",
-    initials: "AS",
-    role: "Chief Executive Officer & Founder",
-    description:
-      "Previously led engineering initiatives at top-tier fintech unicorns. Passionate about financial inclusion and scalable distributed systems.",
-    gradient: "from-[#0075a8] to-[#00507a]",
-  },
-  {
-    name: "Priya Venkat",
-    initials: "PV",
-    role: "Chief Technology Officer",
-    description:
-      "Architecting secure core banking rails and high-throughput real-time transaction engines with over 15 years of industry experience.",
-    gradient: "from-[#0f766e] to-[#134e4a]",
-  },
-  {
-    name: "Rohan Mehta",
-    initials: "RM",
-    role: "Chief Financial Officer",
-    description:
-      "Overseeing global regulatory compliance, risk management, and strategic fiscal expansion across emerging markets.",
-    gradient: "from-[#7c3aed] to-[#4c1d95]",
-  },
-];
+import { executiveLeaders } from "../../data/teamPageData";
 
 const ExecutiveLeadership = (): JSX.Element => {
   return (
@@ -52,7 +18,7 @@ const ExecutiveLeadership = (): JSX.Element => {
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {leaders.map((leader) => (
+          {executiveLeaders.map((leader) => (
             <article
               key={leader.name}
               className="group overflow-hidden rounded-xl border border-[#e0e4ee] bg-white p-4 shadow-[0_4px_14px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#b9dff0] hover:shadow-[0_16px_35px_rgba(15,23,42,0.12)] sm:p-5"

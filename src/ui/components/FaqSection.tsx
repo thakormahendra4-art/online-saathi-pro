@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useAccordion } from "../../hooks/useAccordion";
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { openIndex, toggle: toggleFAQ } = useAccordion();
 
   const faqs = [
   {
@@ -22,10 +22,6 @@ const FAQSection = () => {
     answer: "Fill out the PAN correction form on the UTI portal and submit the required documents."
   }
 ];
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <section className="w-full bg-white py-8 sm:py-10 lg:py-12">

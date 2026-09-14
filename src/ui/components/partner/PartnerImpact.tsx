@@ -1,9 +1,4 @@
-const impactStats = [
-  { value: "₹500Cr+", label: "Monthly processed value" },
-  { value: "15,000+", label: "Active partner touchpoints" },
-  { value: "4.9/5", label: "Partner satisfaction score" },
-  { value: "24/7", label: "Operational support coverage" },
-];
+import { impactStats } from "../../data/partnerPageData";
 
 const PartnerImpact = () => {
   return (

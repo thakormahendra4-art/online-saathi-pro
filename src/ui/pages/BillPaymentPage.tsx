@@ -1,64 +1,11 @@
 import type { JSX } from "react";
-import {
-  Wifi,
-  Tv,
-  Zap,
-  Droplets,
-  Flame,
-  Smartphone,
-  Cable,
-  Landmark,
-} from "lucide-react";
+import { billCategories } from "../data/billPaymentPageData";
 import BillPaymentHero from "../components/services/bill-payment/BillPaymentHero";
 import BillPaymentFeatures from "../components/services/bill-payment/BillPaymentFeatures";
 import BillPaymentFeatureCard from "../components/services/bill-payment/BillPaymentFeatureCard";
 import BillPaymentCTA from "../components/services/bill-payment/BillPaymentCTA";
 import FAQSection from "../components/FaqSection";
 import Footer from "../components/Footer";
-
-const billCategories = [
-  {
-    icon: Zap,
-    title: "Electricity",
-    description: "Pay electricity bills for all major state and private boards instantly.",
-    highlight: "Most Popular",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Recharge",
-    description: "Prepaid and postpaid mobile recharges for all operators across India.",
-  },
-  {
-    icon: Tv,
-    title: "DTH Recharge",
-    description: "Recharge DTH connections for Tata Play, Airtel, Dish TV, and more.",
-  },
-  {
-    icon: Droplets,
-    title: "Water Bill",
-    description: "Pay municipal water supply bills with instant confirmation.",
-  },
-  {
-    icon: Flame,
-    title: "Gas Bill",
-    description: "Pay Piped Natural Gas and LPG cylinder booking bills easily.",
-  },
-  {
-    icon: Wifi,
-    title: "Broadband",
-    description: "Pay broadband and fiber internet bills for all major providers.",
-  },
-  {
-    icon: Cable,
-    title: "Cable TV",
-    description: "Recharge cable TV subscriptions for local and national operators.",
-  },
-  {
-    icon: Landmark,
-    title: "Insurance Premium",
-    description: "Pay life and general insurance premiums before the due date.",
-  },
-];
 
 const BillPaymentPage = (): JSX.Element => {
   return (

@@ -1,6 +1,6 @@
 import TechnologyHero from "../components/technology/TechnologyHero";
 import TechnologyFeature from "../components/technology/TechnologyFeature";
-import { technologyFeatures } from "../components/technology/technologyFeatures";
+import { technologyFeatures } from "../data/technologyPageData";
 import WhyItMatters from "../components/technology/WhyItMatters";
 import TechnologyCTA from "../components/technology/TechnologyCTA";
 import Footer from "../components/Footer";

@@ -1,43 +1,5 @@
 import type { JSX } from "react";
-import { CheckCircle, Fingerprint, Send, UserCheck } from "lucide-react";
-
-interface Step {
-  number: string;
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const steps: Step[] = [
-  {
-    number: "01",
-    icon: UserCheck,
-    title: "Register Sender",
-    description:
-      "The sender provides Aadhaar and basic details. One-time KYC takes less than 2 minutes.",
-  },
-  {
-    number: "02",
-    icon: Fingerprint,
-    title: "Biometric Verification",
-    description:
-      "Fingerprint authentication ensures the transaction is secure and authorized by the sender.",
-  },
-  {
-    number: "03",
-    icon: Send,
-    title: "Send Money",
-    description:
-      "Enter the recipient's details in Nepal, amount, and confirm. Money is sent instantly via IMPS.",
-  },
-  {
-    number: "04",
-    icon: CheckCircle,
-    title: "Instant Delivery",
-    description:
-      "Recipient receives the funds in their Nepali bank account or mobile wallet within minutes.",
-  },
-];
+import { remittanceSteps } from "../../../data/indoNepalRemittancePageData";
 
 const IndoNepalProcess = (): JSX.Element => {
   return (
@@ -57,7 +19,7 @@ const IndoNepalProcess = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => {
+          {remittanceSteps.map((step) => {
             const Icon = step.icon;
 
             return (

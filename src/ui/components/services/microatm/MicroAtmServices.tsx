@@ -1,36 +1,5 @@
 import type { JSX } from "react";
-import { Banknote, FileSearch, ReceiptText } from "lucide-react";
-
-interface Service {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  highlight: string;
-}
-
-const services: Service[] = [
-  {
-    icon: Banknote,
-    title: "Cash Withdrawal",
-    description:
-      "Enable customers to withdraw cash using Aadhaar biometric authentication — no debit card required. Ideal for rural areas with limited bank access.",
-    highlight: "AEPS Based",
-  },
-  {
-    icon: FileSearch,
-    title: "Balance Inquiry",
-    description:
-      "Let customers instantly check their bank balance through biometric verification. Quick, accurate, and builds trust in your services.",
-    highlight: "Instant Result",
-  },
-  {
-    icon: ReceiptText,
-    title: "Mini Statement",
-    description:
-      "Provide printed or digital mini statements of recent transactions. Helps customers track spending and plan their finances better.",
-    highlight: "Last 10 Txns",
-  },
-];
+import { microAtmServices } from "../../../data/microAtmPageData";
 
 const MicroAtmServices = (): JSX.Element => {
   return (
@@ -50,7 +19,7 @@ const MicroAtmServices = (): JSX.Element => {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((svc) => {
+          {microAtmServices.map((svc) => {
             const Icon = svc.icon;
 
             return (

@@ -1,42 +1,10 @@
 import type { JSX } from "react";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What should I do if an AEPS transaction fails?",
-    answer:
-      "Share the transaction reference number with our helpline or WhatsApp Care. Failed AEPS debits are auto-reversed within T+1, and our resolution desk tracks every case to closure.",
-  },
-  {
-    question: "How long does a settlement take?",
-    answer:
-      "Commissions and settlements follow T+0 instant payouts for completed transactions. Reversed and disputed cases settle within T+1 working day.",
-  },
-  {
-    question: "How do I raise a dispute or chargeback?",
-    answer:
-      "Open a ticket from your merchant dashboard or email dispute@onlinesaathi.in with supporting proof. A dedicated risk officer responds within 4 working hours.",
-  },
-  {
-    question: "Is 24×7 support really available?",
-    answer:
-      "Yes. The toll-free helpline and WhatsApp Care operate around the clock, 365 days a year, with escalation coverage through every national holiday.",
-  },
-  {
-    question: "Can I get support in my local language?",
-    answer:
-      "Our regional hubs cover Hindi, English, Tamil, Telugu, Bengali, Marathi, and Gujarati. Choose your language in the IVR menu or reach your district hub.",
-  },
-  {
-    question: "How do I apply to become a partner or distributor?",
-    answer:
-      "Use the inquiry form with Inquiry Type 'Partner / Distribution'. Our partnership team responds within 24 hours with a fit-to-role call.",
-  },
-];
+import { faqs } from "../../data/contactPageData";
+import { useAccordion } from "../../../hooks/useAccordion";
 
 const ContactFAQ = (): JSX.Element => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { openIndex, toggle } = useAccordion();
 
   return (
     <section className="px-5 py-8 sm:py-10 lg:px-8 lg:py-12">
@@ -62,9 +30,7 @@ const ContactFAQ = (): JSX.Element => {
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
+                  onClick={() => toggle(index)}
                   className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
                 >
                   <span className="text-xs font-bold text-[#11182f] sm:text-sm">

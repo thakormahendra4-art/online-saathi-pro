@@ -1,58 +1,5 @@
 import type { JSX } from "react";
-import { Building2, Mail, MessageCircle, Phone, Send } from "lucide-react";
-
-type Channel = {
-  icon: React.ElementType;
-  title: string;
-  detail: string;
-  availability: string;
-  tone: "green" | "blue";
-};
-
-const channels: Channel[] = [
-  {
-    icon: Phone,
-    title: "Toll-Free Helpline",
-    detail: "1800-XXX-XXXX · Hindi, English & regional languages",
-    availability: "24 × 7",
-    tone: "green",
-  },
-  {
-    icon: Mail,
-    title: "Email Support Desk",
-    detail: "support@onlinesaathi.in · NEFT & settlement queries",
-    availability: "< 2 hrs",
-    tone: "blue",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp Care",
-    detail: "Chat with a support agent directly from your merchant app",
-    availability: "24 × 7",
-    tone: "green",
-  },
-  {
-    icon: Send,
-    title: "Merchant Telegram Bot",
-    detail: "Automated balance, transaction, and status lookups",
-    availability: "Instant",
-    tone: "blue",
-  },
-  {
-    icon: Building2,
-    title: "Regional Branch Visit",
-    detail: "Walk-in support at 316 district hubs across 22 states",
-    availability: "On-site",
-    tone: "green",
-  },
-  {
-    icon: Building2,
-    title: "Corporate Office",
-    detail: "Jaipur HQ & Bengaluru office for enterprise accounts",
-    availability: "Mon–Sat",
-    tone: "blue",
-  },
-];
+import { channels, type Channel } from "../../data/contactPageData";
 
 const toneClasses: Record<Channel["tone"], string> = {
   green: "bg-emerald-50 text-emerald-600",

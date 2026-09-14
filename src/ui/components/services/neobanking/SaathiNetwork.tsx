@@ -1,41 +1,10 @@
 import type { JSX } from "react";
 import { Users } from "lucide-react";
 import SaathiNetworkCard from "./SaathiNetworkCard";
-
-const stats = [
-  { value: "10,000+", label: "Active Agents" },
-  { value: "500+", label: "Districts Covered" },
-  { value: "50,000+", label: "Accounts Opened" },
-  { value: "₹10 Cr+", label: "Monthly Transactions" },
-];
-
-interface Capability {
-  title: string;
-  description: string;
-}
-
-const capabilities: Capability[] = [
-  {
-    title: "Bridging the Digital Divide",
-    description:
-      "The Saathi Network is the backbone of Online Saathi, featuring a team of dedicated on-the-ground agents known as Sewa Saathis. They provide personalized assistance to informal workers, ensuring seamless access to our tech platform and services.",
-  },
-  {
-    title: "Personalized Support",
-    description:
-      "Sewa Saathis are highly trained to guide users through our platform, helping with everything from navigating the mobile app to accessing financial services and job opportunities. They ensure every user gets the support they need.",
-  },
-  {
-    title: "Community Engagement",
-    description:
-      "Operating within local communities, Sewa Saathis build trust and foster engagement. Their consistent, reliable assistance bridges the gap between digital technology and real-world interactions, promoting inclusive growth.",
-  },
-  {
-    title: "Empowering Informal Workers",
-    description:
-      "Our network empowers informal workers by equipping them with the tools and resources needed to improve their livelihoods. Join us in creating a more inclusive and sustainable future.",
-  },
-];
+import {
+  networkCapabilities,
+  networkStats,
+} from "../../../data/neoBankingPageData";
 
 const SaathiNetwork = (): JSX.Element => {
   return (
@@ -53,7 +22,7 @@ const SaathiNetwork = (): JSX.Element => {
         </div>
 
         <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4">
-          {stats.map((stat) => (
+          {networkStats.map((stat) => (
             <SaathiNetworkCard
               key={stat.label}
               value={stat.value}
@@ -63,7 +32,7 @@ const SaathiNetwork = (): JSX.Element => {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {capabilities.map((cap) => (
+          {networkCapabilities.map((cap) => (
             <article
               key={cap.title}
               className="rounded-xl border border-[#e0e5ee] bg-white p-6 shadow-[0_3px_10px_rgba(15,23,42,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-[#b9dff0] hover:shadow-[0_14px_30px_rgba(15,23,42,0.10)]"

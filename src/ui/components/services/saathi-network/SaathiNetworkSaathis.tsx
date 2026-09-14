@@ -1,38 +1,5 @@
 import type { JSX } from "react";
-import { CheckCircle, Heart, Shield, Sparkles } from "lucide-react";
-
-interface SaathiTrait {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const traits: SaathiTrait[] = [
-  {
-    icon: Shield,
-    title: "Verified & Trained",
-    description:
-      "Every Saathi undergoes thorough background verification and receives comprehensive training on our platform and services.",
-  },
-  {
-    icon: Heart,
-    title: "Community-First",
-    description:
-      "Saathis are selected from local communities, making them trusted figures who understand the unique challenges faced by their neighbors.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Government Schemes Engine",
-    description:
-      "Saathis help people navigate social welfare schemes, job opportunities, and more — acting as connectors who spread awareness about available services.",
-  },
-  {
-    icon: Sparkles,
-    title: "People-Centric Platform",
-    description:
-      "Their involvement ensures that Online Saathi remains a people-centric platform, bridging the gap between technology and real-world impact.",
-  },
-];
+import { saathiTraits } from "../../../data/saathiNetworkPageData";
 
 const SaathiNetworkSaathis = (): JSX.Element => {
   return (
@@ -61,7 +28,7 @@ const SaathiNetworkSaathis = (): JSX.Element => {
           </div>
 
           <div className="space-y-4">
-            {traits.map((trait) => {
+            {saathiTraits.map((trait) => {
               const Icon = trait.icon;
 
               return (

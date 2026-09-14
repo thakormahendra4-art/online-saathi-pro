@@ -1,31 +1,5 @@
 import type { JSX } from "react";
-
-interface Advisor {
-  name: string;
-  initials: string;
-  role: string;
-  description: string;
-  gradient: string;
-}
-
-const advisors: Advisor[] = [
-  {
-    name: "Sunita Deshmukh",
-    initials: "SD",
-    role: "Former Banking Regulator & FinTech Advisor",
-    description:
-      "Advising on institutional governance, compliance frameworks, and cross-border regulatory strategies.",
-    gradient: "from-[#b45309] to-[#78350f]",
-  },
-  {
-    name: "Vikramaditya Roy",
-    initials: "VR",
-    role: "Venture Partner & Tech Investor",
-    description:
-      "Guiding product scaling, ecosystem expansion, and international institutional partnerships.",
-    gradient: "from-[#0e7490] to-[#155e75]",
-  },
-];
+import { advisors } from "../../data/teamPageData";
 
 const AdvisoryBoard = (): JSX.Element => {
   return (

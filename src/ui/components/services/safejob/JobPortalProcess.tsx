@@ -1,36 +1,6 @@
 import type { JSX } from "react";
-import { ArrowRight, ClipboardCheck, FileText, Route } from "lucide-react";
-
-interface ProcessStep {
-  icon: React.ElementType;
-  step: string;
-  title: string;
-  description: string;
-}
-
-const steps: ProcessStep[] = [
-  {
-    icon: ClipboardCheck,
-    step: "01",
-    title: "Skill Assessment",
-    description:
-      "Saathis begin by conducting comprehensive skill assessments to gain insights into each worker's unique abilities and professional background. These assessments are crucial as they help determine the most suitable job opportunities that align with the worker's capabilities and career aspirations.",
-  },
-  {
-    icon: Route,
-    step: "02",
-    title: "Job Matching",
-    description:
-      "Utilizing the gathered information, Online Saathi's platform employs advanced algorithms to match workers with relevant job openings across various sectors. This personalized approach ensures that each worker is connected with opportunities where they can thrive and contribute effectively.",
-  },
-  {
-    icon: FileText,
-    step: "03",
-    title: "Application Support",
-    description:
-      "In addition to job matching, Saathis provide hands-on support to workers throughout the application journey. This includes assisting them in completing job applications accurately, crafting compelling resumes that highlight their skills and experiences, and even conducting mock interviews to help them prepare confidently.",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { processSteps } from "../../../data/safeJobConnectPageData";
 
 const JobPortalProcess = (): JSX.Element => {
   return (
@@ -47,7 +17,7 @@ const JobPortalProcess = (): JSX.Element => {
         </div>
 
         <div className="relative mt-10 grid gap-6 md:grid-cols-3">
-          {steps.map((item) => {
+          {processSteps.map((item) => {
             const Icon = item.icon;
 
             return (

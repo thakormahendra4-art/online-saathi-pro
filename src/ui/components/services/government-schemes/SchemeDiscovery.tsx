@@ -1,61 +1,9 @@
 import type { JSX } from "react";
-import { useState } from "react";
-import {
-  Briefcase,
-  Bus,
-  GraduationCap,
-  HandHeart,
-  Heart,
-  Home,
-  Landmark,
-  Leaf,
-  Mic,
-  Palette,
-  Plane,
-  Scale,
-  ShowerHead,
-  Smartphone,
-  Users,
-} from "lucide-react";
-
-type Scope = "all" | "central" | "state";
-
-interface Category {
-  icon: React.ElementType;
-  title: string;
-  scope: Scope;
-}
-
-const categories: Category[] = [
-  { icon: Leaf, title: "Agriculture & Rural Environment", scope: "state" },
-  { icon: Landmark, title: "Banking, Financial Services & Insurance", scope: "central" },
-  { icon: Briefcase, title: "Business & Entrepreneur", scope: "central" },
-  { icon: GraduationCap, title: "Education & Learning", scope: "state" },
-  { icon: Heart, title: "Health & Wellness", scope: "state" },
-  { icon: Home, title: "Housing & Shelter", scope: "central" },
-  { icon: Scale, title: "Law & Justice", scope: "central" },
-  { icon: Smartphone, title: "Science, IT & Communications", scope: "state" },
-  { icon: Users, title: "Skills & Employment", scope: "state" },
-  { icon: HandHeart, title: "Social Welfare & Empowerment", scope: "central" },
-  { icon: Palette, title: "Sports & Culture", scope: "state" },
-  { icon: Bus, title: "Transport & Infrastructure", scope: "state" },
-  { icon: Plane, title: "Travel & Tourism", scope: "central" },
-  { icon: ShowerHead, title: "Utility & Sanitation", scope: "state" },
-  { icon: Mic, title: "Women & Child", scope: "central" },
-];
-
-const tabs: { label: string; value: Scope }[] = [
-  { label: "All", value: "all" },
-  { label: "Central", value: "central" },
-  { label: "State", value: "state" },
-];
+import { schemeTabs } from "../../../data/governmentSchemesPageData";
+import { useSchemeDiscovery } from "../../../../hooks/useSchemeDiscovery";
 
 const SchemeDiscovery = (): JSX.Element => {
-  const [activeTab, setActiveTab] = useState<Scope>("all");
-
-  const filtered = categories.filter(
-    (cat) => activeTab === "all" || cat.scope === activeTab,
-  );
+  const { activeTab, setActiveTab, filtered } = useSchemeDiscovery();
 
   return (
     <section
@@ -75,7 +23,7 @@ const SchemeDiscovery = (): JSX.Element => {
 
         {/* Tabs */}
         <div className="mx-auto mt-8 flex w-fit justify-center rounded-lg border border-[#e0e5ee] bg-[#f7f8ff] p-1">
-          {tabs.map((tab) => (
+          {schemeTabs.map((tab) => (
             <button
               key={tab.value}
               type="button"

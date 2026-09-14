@@ -1,12 +1,7 @@
 import type { JSX } from "react";
-import { ArrowRight, BadgeCheck, IndianRupee, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-
-const heroHighlights = [
-  { icon: MapPin, label: "Jobs near you" },
-  { icon: BadgeCheck, label: "Verified employers" },
-  { icon: IndianRupee, label: "Fair wages, paid right" },
-];
+import { heroHighlights } from "../../../data/safeJobConnectPageData";
 
 const SafeJobHero = (): JSX.Element => {
   return (

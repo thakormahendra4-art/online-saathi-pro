@@ -1,57 +1,8 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import image1 from "../../../assets/partner-assets/image 1.png";
-import image2 from "../../../assets/partner-assets/image 2.png";
-import image3 from "../../../assets/partner-assets/image 3.png";
-import image4 from "../../../assets/partner-assets/image 4.png";
-import image5 from "../../../assets/partner-assets/image 5.png";
-import image6 from "../../../assets/partner-assets/image 6.png";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const partners = [
-  { name: "Prabhu Money Transfer", image: image1 },
-  { name: "eKO", image: image2 },
-  { name: "IME", image: image3 },
-  { name: "Partner 4", image: image4 },
-  { name: "Partner 5", image: image5 },
-  { name: "Partner 6", image: image6 },
-];
+import { partners } from "../../data/partnerPageData";
+import { useMarquee } from "../../../hooks/useMarquee";
 
 const Partners = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const track = trackRef.current;
-
-    if (!track) return;
-
-    const items = [...track.children];
-    const firstSet = items[0] as HTMLElement | undefined;
-    const firstSetWidth = firstSet?.offsetWidth ?? 0;
-
-    if (!firstSetWidth) return;
-
-    const animation = gsap.fromTo(
-      track,
-      { x: -firstSetWidth },
-      {
-        x: 0,
-        duration: 35,
-        ease: "none",
-        repeat: -1,
-        onRepeat: () => {
-          gsap.set(track, { x: -firstSetWidth });
-        },
-      },
-    );
-
-    return () => {
-      animation.kill();
-    };
-  }, []);
+  const trackRef = useMarquee();
 
   return (
     <section className="mx-auto flex w-full justify-center overflow-hidden py-10 md:py-12">

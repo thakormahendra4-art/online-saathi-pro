@@ -1,38 +1,6 @@
 import type { JSX } from "react";
-import {
-  CheckCircle,
-  Megaphone,
-  UserPlus,
-  Wrench,
-} from "lucide-react";
+import { activities } from "../../../data/saathiNetworkPageData";
 import LocalEntrepreneurCard from "./LocalEntrepreneurCard";
-
-const activities = [
-  {
-    icon: Megaphone,
-    title: "Outreach",
-    description:
-      "Sewa Saathis actively engage with local communities to identify and reach out to informal workers in need.",
-  },
-  {
-    icon: UserPlus,
-    title: "Onboarding",
-    description:
-      "They assist workers in registering on the Online Saathi Platform and understanding the available services.",
-  },
-  {
-    icon: Wrench,
-    title: "Service Facilitation",
-    description:
-      "Sewa Saathi is gudie worker through the process of accessing services, from job applications to financial services.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Follow-up Support",
-    description:
-      "They provide ongoing support and follow-up to ensure successfull service delivery and address any concerns.",
-  },
-];
 
 const LocalEntrepreneurs = (): JSX.Element => {
   return (
