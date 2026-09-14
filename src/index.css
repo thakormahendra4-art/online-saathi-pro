@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ============================================
+   Design System Tokens — Online Sathi
+   Applied to the About page surface by design.
+   ============================================ */
+
+:root {
+  /* Fonts & type */
+  --font-family-primary: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-size-base: 16px;
+  --font-size-xs: 13px;
+  --font-size-sm: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 19px;
+  --font-size-3xl: 20px;
+  --font-size-4xl: 20.8px;
+
+  /* Core colors */
+  --color-text-primary: #ffffff;
+  --color-surface-base: #000000;
+  --color-text-tertiary: #212529;
+  --color-text-inverse: #0d6efd;
+  --color-surface-raised: #13137e;
+
+  /* Supporting tokens (kept semantic, no raw hex in components) */
+  --color-surface: #ffffff;
+  --color-track: #f5f9fc;
+  --color-ink-secondary: #667085;
+  --color-line: #e0e4ee;
+  --color-line-hover: #b9dff0;
+  --color-accent-soft: #e0f5ff;
+  --color-accent-on-raise: #7cc4f7;
+  --color-ink-on-raise: #d3dcec;
+  --color-surface-raised-deep: #0d0d4d;
+
+  /* Spacing scale */
+  --space-1: 5px;
+  --space-2: 8px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 15px;
+  --space-6: 16px;
+  --space-7: 24px;
+  --space-8: 25px;
+
+  /* Radius / shadow / motion */
+  --radius-xs: 50px;
+  --shadow-card: 0 4px 14px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover: 0 16px 35px rgba(15, 23, 42, 0.12);
+  --motion-duration-instant: 150ms;
+  --motion-duration-fast: 300ms;
+
+  /* Typography defaults */
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Keyboard-first focus visibility (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-text-inverse);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
