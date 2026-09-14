@@ -77,12 +77,12 @@ const Content = ({ eyebrow, title, description, stats }: ContentProps) => {
             earn up to 20k
           </p>
 
-          <button
-            type="button"
+          <a
+            href="https://dash.onlinesaathi.org/login"
             className="shrink-0 rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-50"
           >
             Apply now
-          </button>
+          </a>
         </div>
       </div>
     </div>

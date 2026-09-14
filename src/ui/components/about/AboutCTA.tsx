@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 
 const AboutCTA = (): JSX.Element => {
   return (
@@ -16,20 +17,20 @@ const AboutCTA = (): JSX.Element => {
         </p>
 
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-          <button
-            type="button"
+          <a
+            href="https://dash.onlinesaathi.org/login"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0ca9e2] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0799d0]"
           >
             Become a Retail Saathi
             <ArrowRight size={13} />
-          </button>
+          </a>
 
-          <button
-            type="button"
+          <Link
+            to="/contact"
             className="rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
           >
             Enterprise Inquiries
-          </button>
+          </Link>
         </div>
       </div>
     </section>

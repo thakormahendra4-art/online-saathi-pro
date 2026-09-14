@@ -20,13 +20,13 @@ const TechnologyCTA = () => {
         </p>
 
         <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link
-            to="/saathi"
+          <a
+            href="https://dash.onlinesaathi.org/login"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-[#079bd6] px-5 py-3 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#08a9e8]"
           >
             Become a Saathi
             <ArrowRight size={14} />
-          </Link>
+          </a>
 
           <Link
             to="/partner"

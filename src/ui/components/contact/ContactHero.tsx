@@ -28,7 +28,7 @@ const ContactHero = (): JSX.Element => {
 
           <button className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-5 py-3 text-xs font-semibold text-slate-700 transition hover:border-[#0075a8] hover:text-[#0075a8]">
             <Phone size={14} />
-            1800-XXX-XXXX
+            9099005251
           </button>
         </div>
 

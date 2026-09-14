@@ -160,12 +160,12 @@ const Navbar = () => {
 
         {/* Desktop Login */}
         <div className="hidden lg:flex">
-          <Link
-            to="/login"
+          <a
+            href="https://dash.onlinesaathi.org/login"
             className="rounded-xl border border-gray-200 bg-white px-6 py-3 text-[16px] font-medium text-gray-800 shadow-sm transition-all duration-200 hover:border-[#13a5df] hover:bg-sky-50 hover:text-[#006b9e]"
           >
             Log In
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -266,13 +266,13 @@ const Navbar = () => {
 
             {/* Mobile Login */}
             <div className="mt-3 border-t border-gray-200 pt-4">
-              <Link
-                to="/login"
+              <a
+                href="https://dash.onlinesaathi.org/login"
                 onClick={closeMobileMenu}
                 className="block w-full rounded-xl border border-gray-200 bg-white px-6 py-3 text-center font-medium text-gray-800 shadow-sm transition hover:bg-gray-50"
               >
                 Log In
-              </Link>
+              </a>
             </div>
           </div>
         </div>

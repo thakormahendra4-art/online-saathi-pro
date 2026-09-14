@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 import { saathiBenefits } from "../../../data/homePageData";
 import saathiIllustration from "../../../../assets/home-assets/Workers Image.png";
 import EntrepreneurBenefitCard from "./EntrepreneurBenefitCard";
@@ -39,8 +38,8 @@ const BecomeSaathi = () => {
             ))}
 
             <div className="pt-3">
-              <Link
-                to="/partner"
+              <a
+                href="https://dash.onlinesaathi.org/login"
                 className="group inline-flex h-[52px] items-center justify-center gap-2.5 rounded-lg bg-[#13a5df] px-6 text-[15px] font-semibold text-white shadow-[0_7px_16px_rgba(19,165,223,0.2)] transition hover:bg-[#0796d0]"
               >
                 Join as a Saathi
@@ -48,7 +47,7 @@ const BecomeSaathi = () => {
                   size={18}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </Link>
+              </a>
             </div>
           </div>
 

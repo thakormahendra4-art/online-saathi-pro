@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import { ArrowRight, Users } from "lucide-react";
-import { Link } from "react-router";
 
 const SaathiNetworkHero = (): JSX.Element => {
   return (
@@ -31,12 +30,12 @@ const SaathiNetworkHero = (): JSX.Element => {
             <ArrowRight size={14} />
           </a>
 
-          <Link
-            to="/contact"
+          <a
+            href="https://dash.onlinesaathi.org/login"
             className="rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-[#32415a] transition hover:border-[#0075a8] hover:bg-[#f4fbff]"
           >
             Become a Saathi
-          </Link>
+          </a>
         </div>
       </div>
     </section>

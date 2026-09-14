@@ -44,12 +44,12 @@ const TechnologyHero = () => {
                 <ArrowRight size={14} />
               </Link>
 
-              <Link
-                to="/saathi"
+              <a
+                href="https://dash.onlinesaathi.org/login"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-5 py-3 text-xs font-semibold text-slate-700 transition hover:border-[#0075a8] hover:text-[#0075a8]"
               >
                 Become a Saathi
-              </Link>
+              </a>
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-4 border-t border-slate-200 pt-6 sm:grid-cols-4">
